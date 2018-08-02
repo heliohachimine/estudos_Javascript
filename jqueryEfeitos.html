@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Efeitos</title>
+	<style>
+		body{
+			background-color: #efefef;
+		}
+		.box{
+			position: relative;
+			left: 0;
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<hr>
+
+
+	<script src="jquery-3.3.1.min.js"></script>
+	<script >
+		var box = $('.box');
+		//elemento.animate({propriedades css}, tempo de duração em ms)
+		box.animate({
+			width: "200px",
+			height: "200px",
+			left: "500px"
+		}, 1000)
+
+		box.fadeOut(1000)
+		box.fadeIn(1000)
+	</script>
+
+
+</body>
+</html>
