@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery serialize</title>
+	
+</head>
+<body>
+	
+	<form action="#">
+		<label for="cep">CEP</label>
+		<input type="text" name="cep" id="cep" placeholder="00000-000">
+		<label for="logradouro">Logradouro</label>
+		<input type="text" name="logradouro" id="logradouro" placeholder="Avenida de tal">
+
+		<button>Submit</button>
+	</form>
+
+	<br>
+	<br>
+	<br>
+
+	<div class="resultado"></div>
+
+	<script src="jquery-3.3.1.min.js"></script>
+	<script >
+		var form = $("form");
+		var resultado = $(".resultado");
+
+		form.on("submit",function(event){
+			//não deixa a pagina recarregar
+			event.preventDefault();
+
+			//deixa no formato cep=&logradouro=
+			var data = $(this).serialize();
+			resultado.text(data);
+
+			//salva o formulario num objeto
+			var dataobjeto = $(this).serializeArray();
+			console.log(dataobjeto);
+
+
+		})
+
+
+	</script>
+
+
+
+</body>
+</html>
