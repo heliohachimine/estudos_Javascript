@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Eventos - Keyup</title>
+
+</head>
+<body>
+	
+	<input type="text" id="search">
+	<div id="result">Nenhum resultado</div>
+
+
+	<script>
+		
+		var text = document.getElementById("search");
+		var result = document.getElementById("result");
+		const resultDefaultText = "Nenhum resultado";
+		//evento acionado quando a tecla é solta
+		text.addEventListener("keyup", function(){
+			var value = this.value;
+
+			//result.innerText = value !=="" ? value : resultDefaultText;
+
+			if(value !== "")
+				result.innerText = this.value;
+			else
+				result.innerText = resultDefaultText;
+		})
+
+	</script>
+
+
+</body>
+</html>
