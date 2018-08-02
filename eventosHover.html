@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Eventos - Hover</title>
+
+	<style>
+
+		.link{
+			color: red;
+		}
+		.tractive{
+			background-color: blue;
+		}
+	</style>
+
+</head>
+<body>
+	<a href='#' id="link">
+		<h1>Olá humanos, tudo bem?</h1>
+	</a>
+	<table style="width: 100%;">
+		<thead>
+			<th align="left">Nome</th>
+			<th align="left">Idade</th>
+		</thead>
+		<tbody>
+			<tr class="tr">
+				<td style="height: 30px;">Alien</td>
+				<td style="height: 30px;">2000</td>
+			</tr>
+			<tr class="tr">
+				<td style="height: 30px;">Bixo papão</td>
+				<td style="height: 30px;">1000</td>
+			</tr>
+		</tbody>
+		
+	</table>
+	<script>
+		var link = document.getElementById("link");
+		var trs = document.getElementsByClassName("tr");
+
+		//adiciona o link a classe link quando o mouse fica em cima
+		link.addEventListener("mouseover", function(){
+			link.classList.add("link")
+		})
+		//remove a classe do link quando tira o mouse de cima
+		link.addEventListener("mouseleave", function(){
+			link.classList.remove("link")
+		})
+
+		for(let i=0; i < trs.length; i++){
+			trs[i].addEventListener("mouseover", function(){
+				this.classList.add("tractive")	
+			})
+			trs[i].addEventListener("mouseleave", function(){
+				this.classList.remove("tractive")	
+			})
+		}
+
+
+
+	</script>
+
+
+</body>
+</html>
